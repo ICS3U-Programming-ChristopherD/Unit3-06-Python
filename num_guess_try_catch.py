@@ -18,16 +18,24 @@ def main():
     print("The secret number is within the range of 0-9")
     user_guess = input("Enter your guess: ")
 
+    # Tries casting user_guess from string to int.
     try:
         user_guess = int(user_guess)
 
+    # Code executed if user_guess cannot be converted to int.
     except ValueError:
         print("You did not enter an integer.")
+
+        # Loops through code until user_guess is an integer
         while not isinstance(user_guess, int):
             print("The secret number is within the range of 0-9")
             user_guess = input("Enter your guess: ")
+
+            # Tries casting user_guess from string to int.
             try:
                 user_guess = int(user_guess)
+
+                # If user_guess is an integer, the loop is broken
                 break
             except ValueError:
                 print("Please try again.")
